@@ -12,9 +12,10 @@
   </head>
 
   <body>
+    <%= render "layouts/header" %>
     <div class="flash-messages fixed top-0 left-0 w-full z-50">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <p class="notice" data-controller="flash"><%= notice %></p>
+      <p class="alert" data-controller="flash"><%= alert %></p>
     </div>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
