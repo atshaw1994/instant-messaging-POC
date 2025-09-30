@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root "pages#home"
 
-  resource :session, only: [:new, :create, :destroy]
-
   resources :users, only: [:index] # To easily find other users
 
   resources :chats, only: [:index, :show, :new, :create] do
