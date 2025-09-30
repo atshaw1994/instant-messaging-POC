@@ -1,0 +1,14 @@
+<%# The ID is crucial for Turbo to know where to append the new message %>
+<% user_id = defined?(current_user_id) && current_user_id ? current_user_id : current_user.id %>
+
+<div id="<%= dom_id(message) %>" class="flex items-start my-2 <%= message.user_id == user_id ? 'justify-end' : 'justify-start' %>">
+  <div class="max-w-xs p-3 rounded-lg <%= message.user_id == user_id ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800' %>">
+    <div class="font-semibold text-sm mb-1">
+      <%= message.user.display_name %>
+    </div>
+    <p><%= message.body %></p>
+    <div class="text-xs text-gray-300 mt-1 italic">
+      <%= time_ago_in_words(message.created_at) %> ago
+    </div>
+  </div>
+</div>
