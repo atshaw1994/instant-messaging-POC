@@ -1,0 +1,62 @@
+/* Auth Buttons & Links */
+.signup-button {
+    display: inline-block;
+    margin-right: 8px;
+    background-color: #38a169;
+    color: white;
+    font-weight: bold;
+    padding: 10px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+.signup-button:hover {
+    background-color: #2f855a;
+}
+.login-button {
+    display: inline-block;
+    margin-right: 8px;
+    background-color: #805ad5;
+    color: white;
+    font-weight: bold;
+    padding: 10px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+.login-button:hover {
+    background-color: #6b46c1;
+}
+.logout-btn {
+    color: #e53e3e;
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.logout-btn:hover {
+    color: #c53030;
+}
+.logout-form {
+    display: inline;
+}
+.login-link {
+    color: #3182ce;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.login-link:hover {
+    color: #2b6cb0;
+}
+.signup-link {
+    color: #38a169;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.signup-link:hover {
+    color: #2f855a;
+}

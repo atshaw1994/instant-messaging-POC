@@ -1,33 +1,36 @@
-<div class="max-w-md mx-auto mt-12 bg-white p-8 rounded-xl shadow-lg">
-  <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Sign up</h2>
-
+<div class="signup-page-container">
+  <div class="signup-header-section">
+    <%= link_to root_path, class: "signup-back-btn" do %>
+      <span class="material-symbols-rounded">arrow_back</span>
+    <% end %>
+    <h2 class="signup-page-title">Sign up</h2>
+  </div>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="mb-4">
-      <%= f.label :email, class: "block text-gray-700 font-semibold mb-2" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" %>
+    <% if resource.errors.any? %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+    <% end %>
+    <div class="signup-form">
+      <div class="signup-form-group">
+        <%= f.label :email, class: "signup-label" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "signup-input" %>
+      </div>
+      <div class="signup-form-group">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <%= f.label :password, class: "signup-label" %>
+          <% if @minimum_password_length %>
+            <em class="signup-password-hint">(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+        </div>
+        <%= f.password_field :password, autocomplete: "new-password", class: "signup-input" %>
+      </div>
+      <div class="signup-form-group">
+        <%= f.label :password_confirmation, class: "signup-label" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "signup-input" %>
+      </div>
     </div>
-
-    <div class="mb-4">
-      <%= f.label :password, class: "block text-gray-700 font-semibold mb-2" %>
-      <% if @minimum_password_length %>
-        <em class="text-xs text-gray-500">(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %>
-      <%= f.password_field :password, autocomplete: "new-password", class: "w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 mt-1" %>
-    </div>
-
-    <div class="mb-6">
-      <%= f.label :password_confirmation, class: "block text-gray-700 font-semibold mb-2" %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" %>
-    </div>
-
-    <div>
-      <%= f.submit "Sign up", class: "w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow transition duration-150" %>
+    <div style="text-align: center; margin-top: 20px;">
+      <%= f.submit "Sign up", class: "signup-submit-btn" %>
     </div>
   <% end %>
-
-  <div class="mt-6 text-center">
-    <%= render "devise/shared/links" %>
-  </div>
+  <%# here, we'll have the "signin using" links %>
 </div>

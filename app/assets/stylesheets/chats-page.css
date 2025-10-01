@@ -1,0 +1,63 @@
+/* Chats Page Styles */
+.chats-page-container {
+    width: 50vw;
+    max-height: 80vh;
+    margin: 0 auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+    padding-bottom: 24px;
+}
+.chats-header-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 24px;
+    border-radius: 18px 18px 0 0;
+}
+.chats-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #f1f5f9;
+    color: #222;
+    padding: 12px;
+    border-radius: 50%;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+}
+.chats-btn.back{
+    left: 16px;
+}
+.chats-btn.new{
+    right: 16px;
+}
+.chats-btn .material-symbols-rounded {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+.chats-btn:hover {
+  background: #cbd5e1;
+}
+.chats-page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #222;
+}
+.chat-list {
+    list-style: none;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    min-height: 100%;
+}
+

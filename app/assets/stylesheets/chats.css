@@ -1,0 +1,77 @@
+/* Chat List & Card Styles */
+.chat-card {
+    position: relative;
+    align-items: center;
+    background: #f6f8fa;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+    overflow: hidden;
+    padding: 16px 24px;
+}
+.chat-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+.chat-link-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: block;
+}
+.chat-info {
+    position: relative;
+    z-index: 20;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    padding: 24px 32px 24px 24px;
+    pointer-events: none;
+}
+.chat-user {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 8px;
+    text-decoration: underline;
+}
+.chat-last-message {
+    grid-column: 1;
+    grid-row: 2;
+    color: #555;
+    font-style: italic;
+    font-size: 1rem;
+}
+.chat-delete-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 72px;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 30;
+    background: #e53e3e;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
+}
+.chat-card:hover .chat-delete-btn {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+    transform: translateX(0);
+}
+.chat-delete-btn:hover {
+    background: #c53030;
+}
+.chat-delete-form {
+    display: block;
+    width: auto;
+}
