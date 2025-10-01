@@ -4,7 +4,9 @@
     <% if user_signed_in? %>
       <div class="header-user">
         <span class="header-email"><%= current_user.email %></span>
-        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "logout-btn", form: { class: "logout-form" } %>
+        <%= button_to destroy_user_session_path, method: :delete, class: "logout-btn", form: { class: "logout-form" } do %>
+          <span class="material-symbols-rounded">logout</span>
+        <% end %>
       </div>
     <% else %>
       <div class="header-auth">
