@@ -9,10 +9,17 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     transition: box-shadow 0.2s;
     overflow: hidden;
-    padding: 16px 24px;
 }
 .chat-card:hover {
     box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+.chat-card-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    padding: 16px 24px;
 }
 .chat-link-overlay {
     position: absolute;
@@ -35,7 +42,7 @@
     font-weight: 600;
     color: #2563eb;
     margin-bottom: 8px;
-    text-decoration: underline;
+    text-decoration: none;
 }
 .chat-last-message {
     grid-column: 1;
@@ -49,7 +56,7 @@
     right: 0;
     top: 0;
     height: 100%;
-    width: 72px;
+    width: 128px;
     transform: translateX(100%);
     opacity: 0;
     pointer-events: none;
@@ -61,6 +68,13 @@
     border-radius: 0 8px 8px 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     transition: all 0.3s cubic-bezier(.4,0,.2,1);
+}
+.chat-delete-btn span {
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+    height: 100%;
+    font-size: 1.5rem;
 }
 .chat-card:hover .chat-delete-btn {
     opacity: 1;
