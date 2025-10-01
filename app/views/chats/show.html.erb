@@ -11,7 +11,12 @@
   <%# 🌟 SUBSCRIBE TO REAL-TIME UPDATES 🌟 %>
   <%= turbo_stream_from @chat, "messages" %>
 
-  <ul id="messages" class="conversation-messages" data-chat-id="<%= @chat.id %>" data-current-user-id="<%= current_user.id %>">
+  <ul id="messages" 
+      class="conversation-messages" 
+      data-controller="scroll-messages"
+      data-scroll-messages-target="messages"
+      data-chat-id="<%= @chat.id %>" 
+      data-current-user-id="<%= current_user.id %>">
     <% @chat.messages.includes(:user).each do |message| %>
       <li>
         <%= render "messages/message", message: message, current_user_id: current_user.id %>
